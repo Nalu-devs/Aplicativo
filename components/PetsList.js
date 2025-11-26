@@ -1,16 +1,24 @@
-import Estilos from '../styles/Estilos';
 import { View, Text, TouchableOpacity } from 'react-native';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import Estilos from '../styles/Estilos';
 
 export default function PetShop({ id, nome, telefone, pet, onDelete }) {
   return (
-    <View style={Estilos.pessoaItemContainer}>
-      <View>
-        <Text style={Estilos.pessoaItemNome}>{nome}</Text>
-        <Text style={Estilos.pessoaItemEmail}>{telefone}</Text>
-        <Text style={Estilos.pessoaItemEmail}>{pet}</Text>
+    <View style={Estilos.listaCard}>
+
+      
+
+      <View style={Estilos.listaInfoContainer}>
+        <Text style={Estilos.listaTitulo}>{nome}</Text>
+        <Text style={Estilos.listaSubtexto}>{telefone}</Text>
+        <Text style={Estilos.listaSubtexto}>{pet}</Text>
       </View>
-      <TouchableOpacity onPress={() => onDelete(id)}>
-        <Text style={Estilos.pessoaItemBtnExcluirText}>Excluir</Text>
+
+      <TouchableOpacity
+        style={Estilos.deleteButton}
+        onPress={() => onDelete(id)}
+      >
+        <Text style={Estilos.deleteButtonText}>Excluir</Text>
       </TouchableOpacity>
     </View>
   );

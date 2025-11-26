@@ -1,6 +1,6 @@
 import Estilos from '../styles/Estilos.js';
 import { useState, useEffect } from 'react';
-import { View, Text, TextInput, Button, FlatList, Alert } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, FlatList, Alert } from 'react-native';
 import { initDB, adicionarPets, listarPets, deletarPets } from '../database.js';
 import PetShop from './PetsList.js';
 import { SafeAreaView, SafeAreaProvider } from 'react-native-safe-area-context';
@@ -15,7 +15,7 @@ export default function Cadastro() {
     const lista = await listarPets();
     setPetShop(lista);
   };
-  
+
   const prepararApp = async () => {
     await initDB();
     await carregarPets();
@@ -68,7 +68,9 @@ export default function Cadastro() {
             onChangeText={setPet}
             style={Estilos.campoTexto}
           />
-          <Button title="Adicionar" onPress={handleAdicionar} />
+          <TouchableOpacity style={Estilos.button} onPress={handleAdicionar}>
+            <Text style={Estilos.buttonText}>Adicionar</Text>
+          </TouchableOpacity>
         </View>
 
         <FlatList

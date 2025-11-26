@@ -30,11 +30,6 @@ export default function Sobre() {
             Nunca mais perca um remédio, uma consulta ou a data da vacina. Crie perfis, receba lembretes e tenha tudo no controle.
           </Text>
         </View>
-
-        <TouchableOpacity style={Estilos.button}>
-          <Text style={Estilos.buttonText}>Acesse a galeria de imagens aqui!</Text>
-        </TouchableOpacity>
-
       </View>
     </ScrollView>
   );

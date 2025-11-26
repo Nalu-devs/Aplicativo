@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Cadastro from './components/Cadastro';
 import Sobre from './components/Sobre';
+import Galeria from './components/Galeria';
+
 
 export default function App() {
   const [tela, setTela] = useState('Sobre');
@@ -15,12 +17,15 @@ export default function App() {
         <TouchableOpacity onPress={() => setTela('Cadastro')}>
           <Text style={{ fontWeight: tela === 'Cadastro' ? 'bold' : 'normal' }}>Cadastro</Text>
         </TouchableOpacity>
+        <TouchableOpacity onPress={() => setTela('Galeria')}>
+          <Text style={{ fontWeight: tela === 'Galeria' ? 'bold' : 'normal' }}>Galeria</Text>
+        </TouchableOpacity>
       </View>
 
-      {/* Conteúdo */}
       <View style={{ flex: 1 }}>
         {tela === 'Sobre' && <Sobre />}
         {tela === 'Cadastro' && <Cadastro />}
+        {tela === 'Galeria' && <Galeria />}
       </View>
     </View>
   );
